@@ -116,11 +116,50 @@ main {
   margin: 25px 25px 25px auto;
 }
 
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s linear 0.03s;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.like-icon:hover .core {
+  fill: #000;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: #000;
+  transition: fill 0.3s linear 0.05s;
+}
+
 .card__icon-button {
   display: block;
   border: none;
   background-color: transparent;
-  max-height: 38px; /* вернуться */
+  max-height: 39.5px; /* вернуться */
+  border: solid 2px transparent;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: solid 2px #000;
+  transition: border 0.3s ease;
 }
 
 .card__like-button {
@@ -129,12 +168,16 @@ main {
   border: solid 2px #000;
   background-color: transparent;
   min-width: 130px;
+  /* max-height: 38px; */
 }
 
 .button__text {
   font-family: var(--accent_font);
   font-size: 14px;
   line-height: 90%;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
 }
 
 .footer {
@@ -151,6 +194,7 @@ main {
 .footer__floppy {
   width: 21px;
   height: 21px;
+  mix-blend-mode: difference;
 }
 
 .footer .button__text {
@@ -167,7 +211,7 @@ main {
 
 .save_dialog_layout {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   align-items: center;
 }
 
@@ -175,7 +219,7 @@ main {
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-  max-width: 234px;
+  max-width: 220px;
 }
 
 .save_dialog::backdrop {
@@ -197,12 +241,41 @@ main {
   line-height: 90%;
 }
 
+.save_dialog__floppy {
+  width: 39px;
+  height: 39px;
+}
 
+.button {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  color: #fff;
+  background: #fff;
+}
 
-/* вернуться */
-.test {
-  width: 60px;
-  height: 60px;
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 #000;
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  display: block;
+  inset: 0;
+  background-color: #000;
+  height: 100%;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
 }
 
 /* @support (text-stroke: 1px #fff) {
@@ -210,6 +283,7 @@ main {
     text-stroke: 1px #fff;
   }
 } */
+
 
 @media (width <= 375px) {
   .header {

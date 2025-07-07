@@ -3,5 +3,10 @@
 :root {
   --main-font: 'Inter';
   --accent_font: 'Press Start 2P';
+  
   --block-width: clamp(375px, 100%, 700px);
+
+  --heart-contour-color: #000;
+  --animation-fill-color: #F00;
+  --sparks-color: #F00;
 }

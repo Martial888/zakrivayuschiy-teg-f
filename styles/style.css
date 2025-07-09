@@ -15,6 +15,7 @@
   max-inline-size: 1440px;
   min-block-size: 100dvb;
   font-family: var(--accent_font);
+  font-variation-settings: 'wght' 400;
   background-image: 
     repeating-linear-gradient(90deg, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
     repeating-linear-gradient(#d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
@@ -66,6 +67,7 @@ main {
 .article__title {
   padding: 4px 10px;
   font-size: 18px;
+  font-variation-settings: 'wght' 700;
   border-bottom: solid 2px #000;
 }
 
@@ -204,9 +206,8 @@ main {
 
 .card__icon-button {
   display: block;
-  border: none;
   background-color: transparent;
-  max-height: 39.5px; /* вернуться */
+  max-height: 39.5px;
   border: solid 2px transparent;
   transition: border 0.3s ease;
 }
@@ -295,8 +296,6 @@ main {
   font-size: 14px;
   line-height: 90%;
   text-transform: uppercase;
-  font-size: 14px;
-  line-height: 90%;
 }
 
 .save_dialog__floppy {
@@ -336,11 +335,12 @@ main {
   transition: width 0.5s ease-in-out;
 }
 
-/* @support (text-stroke: 1px #fff) {
+@supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
   .article__image_block-label {
+    -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
   }
-} */
+}
 
 
 @media (width <= 375px) {

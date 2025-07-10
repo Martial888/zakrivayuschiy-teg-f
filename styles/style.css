@@ -11,6 +11,8 @@
 */
 
 .page {
+  margin-left: auto;
+  margin-right: auto;
   min-inline-size: 320px;
   max-inline-size: 1440px;
   min-block-size: 100dvb;
@@ -51,9 +53,7 @@ main {
 }
 
 .header__text {
-  /* font-size: 14px; */
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  text-transform: uppercase;
 }
 
 .article {
@@ -79,33 +79,34 @@ main {
   max-width: 100%;
   display: block;
   aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
-.article:nth-of-type(2) img {
+.filter-contrast {
   filter: contrast(150%);
 }
 
-.article:nth-of-type(3) img {
+.filter-saturate {
   filter: saturate(300%);
 }
 
-.article:nth-of-type(4) img {
+.filter-opacity-blur {
   filter: opacity(0.8) blur(5px);
 }
 
-.article:nth-of-type(5) img {
+.filter-sepia {
   filter: sepia(30%);
 }
 
-.article:nth-of-type(6) img {
+.filter-invert {
   filter: invert(0.9);
 }
 
-.article:nth-of-type(7) img {
-  filter: hue-rotate(80deg);
+.filter-hue-rotate {
+  filter: hue-rotate(100deg);
 }
 
-.article:nth-of-type(8) img {
+.filter-brightness {
   filter: brightness(150%);
 }
 
@@ -114,7 +115,7 @@ main {
  font-family: var(--accent-font);
  font-size: 14px;
  top: 25px;
- right: 13px;
+ right: 25px;
  mix-blend-mode: hard-light;
  opacity: 0.5;
   -webkit-text-stroke-width: 1px;
@@ -125,9 +126,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 27px;
+  padding: 25px;
+  font-size: 18px;
+  line-height: 21px;
+  border-top: solid 2px #000;
 }
 
-.article__text-main {
+/* .article__text-main {
   border-top: solid 2px #000;
   padding: 25px 25px 0 25px;
   font-size: 18px;
@@ -138,10 +143,11 @@ main {
   padding: 0 25px 0 25px;
   font-size: 18px;
   line-height: 21px;
-}
+} */
 
 .article__like-buttons {
   display: flex;
+  gap: 1px;
   justify-content: end;
   align-items: center;
   margin: 25px 25px 25px auto;
@@ -246,7 +252,7 @@ main {
 }
 
 .save-part {
-  margin: 0 auto 50px auto;
+  margin: 0 auto 100px auto;
 }
 
 .save-part__button {
@@ -266,12 +272,18 @@ main {
   display: block;
 }
 
-.save_dialog[open] {
-  display: flex;
+.save_dialog {
+  display: none;
   flex-direction: column;
   gap: 30px;
   padding: 30px;
   border: solid 2px #000;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.save_dialog[open] {
+  display: flex;
 }
 
 .save_dialog_layout {
@@ -280,10 +292,10 @@ main {
   align-items: center;
 }
 
-.save_dialog_layout p {
-  font-size: 14px;
+.save_dialog_text {
+  /* font-size: 14px; */
   line-height: 150%;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   max-width: 220px;
 }
 
@@ -293,13 +305,14 @@ main {
 
 .dialog__close_button {
   display: block;
-  padding: 12.5px 132.5px;
+  /* padding: 12.5px 132.5px; */
+  padding: 9px 130.5px;
   border: solid 2px #000;
   background-color: transparent;
 }
 
 .dialog__close_button-text {
-  font-size: 14px;
+  /* font-size: 14px; */
   line-height: 90%;
   text-transform: uppercase;
 }
@@ -352,6 +365,11 @@ main {
 @media (width <= 375px) {
   .header {
     padding: 120px 14px;
+  }
+
+  .article__image_block-label {
+    top: 23px;
+    right: 11px;
   }
 
   .save-part__button {

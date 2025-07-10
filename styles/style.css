@@ -16,7 +16,7 @@
   min-inline-size: 320px;
   max-inline-size: 1440px;
   min-block-size: 100dvb;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'Press Start 2P');
   font-variation-settings: 'wght' 400;
   background-image: 
     repeating-linear-gradient(90deg, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
@@ -26,7 +26,7 @@
   background-attachment: fixed;
 }
 
-main {
+.main-part {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ main {
 }
 
 .header {
-  inline-size: var(--block-width);
+  inline-size: var(--block-width, clamp(375px, 100%, 700px));
   margin: 100px auto;
   /* padding: 120px 14px;  для мобилы */
   padding: clamp(120px, 100%, 128px) clamp(14px, 100%, 120.5px);
@@ -57,9 +57,9 @@ main {
 }
 
 .article {
-  inline-size: var(--block-width);
+  inline-size: var(--block-width, clamp(375px, 100%, 700px));
   margin: 0 auto;
-  font-family: var(--main-font);
+  font-family: var(--main-font, 'Inter');
   background-color: #fff;
   border: solid 2px #000;
 }
@@ -112,7 +112,7 @@ main {
 
 .article__image_block-label {
  position: absolute;
- font-family: var(--accent-font);
+ font-family: var(--accent-font, 'Press Start 2P');
  font-size: 14px;
  top: 25px;
  right: 25px;
@@ -147,10 +147,10 @@ main {
 
 .article__like-buttons {
   display: flex;
-  gap: 1px;
+  gap: 4px;
   justify-content: end;
   align-items: center;
-  margin: 25px 25px 25px auto;
+  margin: 0 25px 25px auto;
 }
 
 .contour {
@@ -222,6 +222,8 @@ main {
   max-height: 39.5px;
   border: solid 2px transparent;
   transition: border 0.3s ease;
+  padding: 0;
+  cursor: pointer;
 }
 
 .card__icon-button:focus {
@@ -236,14 +238,14 @@ main {
 .card__like-button {
   display: block;
   padding: 9px 17px 7px 17px;
-  border: solid 2px #000;
+  /* border: solid 2px #000; */
   background-color: transparent;
   min-width: 130px;
   /* max-height: 38px; */
 }
 
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'Press Start 2P');
   font-size: 14px;
   line-height: 90%;
   position: relative;
@@ -274,8 +276,10 @@ main {
 
 .save_dialog {
   display: none;
-  flex-direction: column;
-  gap: 30px;
+  /* flex-direction: column; */
+  /* gap: 30px; */
+  column-gap: 20px;
+  row-gap: 30px;
   padding: 30px;
   border: solid 2px #000;
   font-size: 14px;
@@ -283,14 +287,16 @@ main {
 }
 
 .save_dialog[open] {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
 }
 
-.save_dialog_layout {
+/* .save_dialog_layout {
   display: flex;
   gap: 12px;
   align-items: center;
-}
+} */
 
 .save_dialog_text {
   /* font-size: 14px; */
@@ -306,9 +312,11 @@ main {
 .dialog__close_button {
   display: block;
   /* padding: 12.5px 132.5px; */
-  padding: 9px 130.5px;
-  border: solid 2px #000;
+  padding: 10px 130.5px;
+  /* border: solid 2px #000; */
   background-color: transparent;
+  grid-column: 1 / span 2;
+  width: 100%
 }
 
 .dialog__close_button-text {
@@ -327,6 +335,8 @@ main {
   transition: box-shadow 0.3s ease;
   color: #fff;
   background: #fff;
+  cursor: pointer;
+  border: solid 2px #000;
 }
 
 .button:focus {
@@ -370,6 +380,11 @@ main {
   .article__image_block-label {
     top: 23px;
     right: 11px;
+  }
+
+  .save_dialog {
+    padding-left: 42px;
+    padding-right: 42px;
   }
 
   .save-part__button {

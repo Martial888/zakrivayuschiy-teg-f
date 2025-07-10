@@ -2,7 +2,7 @@
 
 :root {
   --main-font: 'Inter';
-  --accent_font: 'Press Start 2P';
+  --accent-font: 'Press Start 2P';
   
   --block-width: clamp(375px, 100%, 700px);
 

@@ -10,7 +10,7 @@
 
 */
 
-@keyframes heart-beat {
+@keyframes increaseHeartOnce {
   0% {
     scale: 1;
   }
@@ -20,7 +20,7 @@
   }
 }
 
-@keyframes sparks {
+@keyframes flashSparksOnce {
   0% {
     opacity: 0;
   }

@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   max-inline-size: 1440px;
   min-block-size: 100dvb;
-  font-family: var(--accent_font);
+  font-family: var(--accent-font);
   font-variation-settings: 'wght' 400;
   background-image: 
     repeating-linear-gradient(90deg, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
@@ -111,7 +111,7 @@ main {
 
 .article__image_block-label {
  position: absolute;
- font-family: var(--accent_font);
+ font-family: var(--accent-font);
  font-size: 14px;
  top: 25px;
  right: 13px;
@@ -202,12 +202,12 @@ main {
 }
 
 .like-icon.is-liked .heart {
-  animation: heart-beat 0.3s ease-in 0.1s;
+  animation: increaseHeartOnce 0.3s ease-in 0.1s;
   transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s;
+  animation: flashSparksOnce 0.3s ease-in 0.3s;
 }
 
 .card__icon-button {
@@ -237,7 +237,7 @@ main {
 }
 
 .button__text {
-  font-family: var(--accent_font);
+  font-family: var(--accent-font);
   font-size: 14px;
   line-height: 90%;
   position: relative;
@@ -280,7 +280,7 @@ main {
   align-items: center;
 }
 
-.save_dialog_layout span {
+.save_dialog_layout p {
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;

@@ -121,9 +121,15 @@ main {
   -webkit-text-stroke-color: #fff;
 }
 
+.article__text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
 .article__text-main {
   border-top: solid 2px #000;
-  padding: 25px 25px 27px 25px;
+  padding: 25px 25px 0 25px;
   font-size: 18px;
   line-height: 21px;
 }
@@ -239,24 +245,24 @@ main {
   mix-blend-mode: difference;
 }
 
-.footer {
+.save-part {
   margin: 0 auto 50px auto;
 }
 
-.footer__button {
+.save-part__button {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 15px 20px 15px 20px;
 }
 
-.footer__floppy {
+.save-part__floppy {
   width: 21px;
   height: 21px;
   mix-blend-mode: difference;
 }
 
-.footer .button__text {
+.save-part .button__text {
   display: block;
 }
 
@@ -348,11 +354,11 @@ main {
     padding: 120px 14px;
   }
 
-  .footer__button {
+  .save-part__button {
     flex-direction: column;
   }
 
-  .footer__floppy {
+  .save-part__floppy {
     width: 28px;
     height: 28px;
   }

@@ -36,7 +36,6 @@
 .header {
   inline-size: var(--block-width, clamp(375px, 100%, 700px));
   margin: 100px auto;
-  /* padding: 120px 14px;  для мобилы */
   padding: clamp(120px, 100%, 128px) clamp(14px, 100%, 120.5px);
   display: flex;
   flex-direction: column;
@@ -56,7 +55,7 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
-.article {
+.card {
   inline-size: var(--block-width, clamp(375px, 100%, 700px));
   margin: 0 auto;
   font-family: var(--main-font, 'Inter');
@@ -64,18 +63,18 @@
   border: solid 2px #000;
 }
 
-.article__title {
+.card__title {
   padding: 4px 10px;
   font-size: 18px;
   font-variation-settings: 'wght' 700;
   border-bottom: solid 2px #000;
 }
 
-.article__image_block {
+.card__image-block {
   position: relative;
 }
 
-.article__image_block-image {
+.card__image-block_image {
   max-width: 100%;
   display: block;
   aspect-ratio: 1/1;
@@ -110,7 +109,7 @@
   filter: brightness(150%);
 }
 
-.article__image_block-label {
+.card__image-block_label {
  position: absolute;
  font-family: var(--accent-font, 'Press Start 2P');
  font-size: 14px;
@@ -122,7 +121,7 @@
   -webkit-text-stroke-color: #fff;
 }
 
-.article__text {
+.card__text {
   display: flex;
   flex-direction: column;
   gap: 27px;
@@ -145,7 +144,7 @@
   line-height: 21px;
 } */
 
-.article__like-buttons {
+.card__like-buttons {
   display: flex;
   gap: 4px;
   justify-content: end;
@@ -365,7 +364,7 @@
 }
 
 @supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
-  .article__image_block-label {
+  .card__image-block_label {
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
   }
@@ -377,7 +376,7 @@
     padding: 120px 14px;
   }
 
-  .article__image_block-label {
+  .card__image-block_label {
     top: 23px;
     right: 11px;
   }
